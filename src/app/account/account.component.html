@@ -1,0 +1,26 @@
+<div class="login" style="border: 1px solid gainsboro; height: 650px;"> 
+      <div class="login_wrapper" >
+        <div class="animate form ">
+          <section class="login_content">
+        
+            <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="small" type="ball-spin-clockwise">  
+              <p style="color: white; font-weight: bolder; font-size: large;" >Please Wait... </p>  
+            </ngx-spinner>
+
+        <h1 *ngIf="LocalTitle != ''">{{LocalTitle}}</h1>
+        <router-outlet></router-outlet>  
+ 
+        <div class="separator">  
+          <br />
+  
+          <div>
+            <h1><i class="fa fa-building-o"></i> Flave Technologies! </h1>
+            <p>2020 All Rights Reserved. School manager is a system powered by Flave Technologies. Privacy and Terms</p>
+          </div>
+        </div>
+        </section>
+        </div>
+     </div>   
+</div>   
+
+  

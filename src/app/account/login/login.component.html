@@ -1,0 +1,18 @@
+<form #form="ngForm" autocomplete="on" (submit)="onSubmit(form)">
+  <h1>Login Form</h1>
+  <label class="text-danger" *ngIf="LoginErrorResponse?.errors != null">{{LoginErrorResponse?.errors}}  </label>
+  
+  
+  <div>
+    <input type="email" class="form-control" placeholder="Email" #Email="ngModel" name="Email" [(ngModel)]="formModel.Email" required="" />
+  </div>
+  <div>
+    <input type="password" class="form-control" placeholder="Password" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required="" />
+  </div>
+  <div>
+    <button class="btn btn-default submit" [disabled]="form.invalid">Log in 
+    </button>
+    <a class="reset_pass" routerLink="/account/confirmemail" routerLinkActive="active" >Lost your password?</a>
+  </div>
+
+</form>  

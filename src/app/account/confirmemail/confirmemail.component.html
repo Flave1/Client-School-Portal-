@@ -1,0 +1,19 @@
+<form [formGroup]="accountService.ConfirmEmail" autocapitalize="off" (submit)="onSubmit()">
+    <h1>Account Email</h1>
+    <label class="text-danger" *ngIf="ErrorDetails?.errors != null">{{ErrorDetails?.errors}}  </label>
+    <div>
+        <label>Email  <span class="required text-left">*</span>  </label>
+        <input type="email" class="form-control" placeholder="Email" formControlName="Email" />
+        <label class="text-danger" *ngIf="accountService.ConfirmEmail.get('Email').touched && accountService.ConfirmEmail.get('Email').errors?.required">email required</label>
+        <label class="text-danger" *ngIf="accountService.ConfirmEmail.get('Email').touched && accountService.ConfirmEmail.get('Email').errors?.email">invalid email </label>
+   
+    </div> 
+    <div>
+      <button class="btn btn-default submit" [disabled]="!accountService.ConfirmEmail.valid">Submit </button>
+    </div>
+
+  </form>  
+  <div class="clearfix"></div> 
+<p class="change_link">I know my password 
+  <a  routerLink="/account/login" routerLinkActive="active"  class="to_register"> Login </a>
+</p>

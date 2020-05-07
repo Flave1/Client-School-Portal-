@@ -1,0 +1,29 @@
+
+   
+          <form [formGroup]="accountService.BurserReg" autocapitalize="off" (submit)="onSubmit()"> 
+            <h1>Create Account</h1>
+            <label class="text-danger" *ngIf="ErrorDetails?.errors != null">{{ErrorDetails?.errors}}  </label>
+            <label class="text-success" *ngIf="Success != ''">{{Success}}  </label>
+            <div>
+                <label>Email  <span class="required text-left">*</span>  </label>
+                <input type="email" class="form-control" placeholder="Email" formControlName="Email" />
+                <label class="text-danger" *ngIf="accountService.BurserReg.get('Email').touched && accountService.BurserReg.get('Email').errors?.required">email required</label>
+                <label class="text-danger" *ngIf="accountService.BurserReg.get('Email').touched && accountService.BurserReg.get('Email').errors?.email">invalid email </label>
+           
+            </div>
+
+            <div class="">
+              <label>Gender *:</label>
+                      <p>
+                        Student:
+                        <input type="radio" class="flat" formControlName="UserType" id="student" value="1" checked="" required /> 
+                        Staff:
+                        <input type="radio" class="flat" formControlName="UserType" id="staff" value="2" />
+                      </p>
+            </div>
+            <div>
+              <button class="btn btn-default submit" [disabled]="!accountService.BurserReg.valid">Submit
+    
+              </button>
+            </div> 
+          </form> 
